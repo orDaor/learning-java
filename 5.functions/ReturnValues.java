@@ -1,8 +1,8 @@
 public class ReturnValues {
     public static void main(String[] args) {
         //rectangle area
-        double area = calcRectangleArea(-3, 3.1);
-        System.out.println("Area: " + area);
+        double area = calcRectangleArea(3, 3.1);
+        printArea(area);
 
         //area explanation in the selected language
         String explanation = explainArea("Italian");
@@ -38,5 +38,10 @@ public class ReturnValues {
 
         return explanation;
     }
+
+    public static void printArea(double area) {
+        System.out.println("Area: " + area);
+    }
+
 
 }

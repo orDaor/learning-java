@@ -1,35 +1,30 @@
 public class Weather {
     public static void main(String[] args) {
-        double noon = 77;          //temperature at noon in fahrenheit.
-        double evening = 61;       //temperature during the evening in fahrenheit
-        double midnight = 55;      //temperature at midnight in fahrenheit
+        //temp F
+        double noon_F = 77; 
+        double evening_F = 61; 
+        double midnight_F = 55; 
 
-        //Task 3 - Call the printTemperatures function. 
-        
-        
+        //temp C
+        double noon_C = fahrenheitToCelsius(noon_F);
+        double evening_C = fahrenheitToCelsius(evening_F);
+        double midnight_C = fahrenheitToCelsius(midnight_F);
+
+        //print tem
+        printTemperatures(noon_F, noon_C);
+        printTemperatures(evening_F, evening_C);
+        printTemperatures(midnight_F, midnight_C);
     }
 
+    // Task 1: Make a function here to convert F to C
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
 
-    //Task 1: Make a function here. See the doc comments below. 
+    // Task 2: Make a function here to print temperature values in F & C
+    public static void printTemperatures(double fahrenheit, double celsius) {
+        System.err.println("F: " + fahrenheit);
+        System.out.println("C: " + celsius + "\n");
+    }
 
-    /**
-     * Function name: fahrenheitToCelsius - converts fahrenheit to celcius
-     * @param fahrenheit (double)
-     * @return celsius (double)
-     * 
-     * Inside the function:
-     * 1. returns the temperature in celcius. C = (F - 32) * 5/9. 
-     */
-
-     
-    //Task 2: Make a function here. See the doc comments below. 
-
-    /**
-     * Function name: printTemperatures – prints both temperature values. 
-     * @param fahrenheit (double)
-     * 
-     * Inside the function: 
-     *  1. prints: F: <temperature in fahrenheit>.
-     *  2. prints: C: <temperature in celsius> . 
-     */
 }
