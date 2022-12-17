@@ -1,34 +1,42 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class SignIn {
     public static void main(String[] args) {
         String username = "Samantha";
         String password = "Java <3";
-        
-        /* Task 1 
-            1. Pick up a username and password from the user.
-       */
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("\nWelcome to Javagram! Sign in below\n");
+        scan.useLocale(Locale.ENGLISH);
+
+        System.out.println("Welcome to Javagram! Sign in below\n");
+
+        // enter username
         System.out.print("- Username: ");
-        //pick up username
+        String enteredUsername = scan.nextLine();
+
+        // enter password
         System.out.print("- Password: ");
-        //pick up password
+        String enteredPassword = scan.nextLine();
 
-        // see Learn the Part for the remaining instructions.
-        
-        
-        /* will be useful for task 2
-        
-            System.out.println("\nIncorrect, please try again!\n");
+        while (!username.equals(enteredUsername) ||
+                !password.equals(enteredPassword)) {
+            System.out.println("\nIncorrect credentials, please try again");
+
+            // enter username
             System.out.print("- Username: ");
-            usernameEntry = scan.nextLine();
-            System.out.print("- Password: ");
-            passwordEntry = scan.nextLine();
+            enteredUsername = scan.nextLine();
 
-        
-        */
+            // enter password
+            System.out.print("- Password: ");
+            enteredPassword = scan.nextLine();
+        }
+
+        //credentials ok
+        System.out.println("\nWelcome " + username + " !");
+
+        // close scanner
         scan.close();
-        
+
     }
 }
