@@ -1,18 +1,28 @@
-public class RandomNumbers {
+public class RandomNumbers2 {
     public static void main(String[] args) {
 
-        int[][] table = {
-                { 48, 56, 56, 76, 0, 81, 51, 81, 99, 70 },
-                { 38, 52, 73, 6, 10, 56, 1, 71, 47, 9 },
-                { 85, 35, 47, 98, 91, 25, 69, 52, 2, 93 }
-        };
+        //create and initialize matrix with zeros
+        int[][] table = new int[100][10];
 
+        //fill matrix with random integers
+        fillMatrixWithRandomNumbers(table);
+
+        //print matrix values
         printMatrix(table);
     }
 
     public static int randomNumber() {
         double randomNumber = Math.random() * 100;
         return (int) randomNumber;
+    }
+
+    public static void fillMatrixWithRandomNumbers(int[][] matrix) {
+        // loop through each matrix element
+        for (int i = 0; i < matrix.length; i++) { // loop rows
+            for (int k = 0; k < matrix[0].length; k++) {
+                matrix[i][k] = randomNumber();
+            }
+        }
     }
 
     public static void printMatrix(int[][] matrix) {
