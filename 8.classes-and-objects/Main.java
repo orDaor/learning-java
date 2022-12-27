@@ -6,25 +6,23 @@ public class Main {
     public static void main(String[] args) {
 
         // new car object
-        Car Nissan = new Car();
+        Car Nissan = new Car("Nissan", 12999, 1992, "Blue");
 
-        // initialized with null/zero values
-        System.out.println("Nissan.make: " + Nissan.make);
-        System.out.println("Nissan.price: " + Nissan.price);
-        System.out.println("Nissan.year: " + Nissan.year);
-        System.out.println("Nissan.color: " + Nissan.color);
+        System.out.println("\nNissan.make: " + Nissan.getMake());
+        System.out.println("Nissan.price: " + Nissan.getPrice());
+        System.out.println("Nissan.year: " + Nissan.getYear());
+        System.out.println("Nissan.color: " + Nissan.getColor());
 
-        // set values to properties
-        Nissan.make = "Nissan";
-        Nissan.price = 10000;
-        Nissan.year = 2008;
-        Nissan.color = "Blue";
+        //change values
+        Nissan.setMake("Fiat");
+        Nissan.setPrice(12345);
+        Nissan.setYear(2009);
+        Nissan.setColor("Green");
 
-        System.out.println("\nNissan.make: " + Nissan.make);
-        System.out.println("Nissan.price: " + Nissan.price);
-        System.out.println("Nissan.year: " + Nissan.year);
-        System.out.println("Nissan.color: " + Nissan.color);
-
+        System.out.println("\nNissan.make: " + Nissan.getMake());
+        System.out.println("Nissan.price: " + Nissan.getPrice());
+        System.out.println("Nissan.year: " + Nissan.getYear());
+        System.out.println("Nissan.color: " + Nissan.getColor());
     }
 
 }
