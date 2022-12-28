@@ -6,23 +6,24 @@ public class Main {
     public static void main(String[] args) {
 
         // new car object
-        Car Nissan = new Car("Nissan", 12999, 1992, "Blue");
+        Car nissan = new Car(
+                "Nissan",
+                12999,
+                1992,
+                "Blue",
+                new String[] { "Tire1, Tire2, Tire3, Tire4" });
+        nissan.printFields();
 
-        System.out.println("\nNissan.make: " + Nissan.getMake());
-        System.out.println("Nissan.price: " + Nissan.getPrice());
-        System.out.println("Nissan.year: " + Nissan.getYear());
-        System.out.println("Nissan.color: " + Nissan.getColor());
+        // change values
+        nissan.setPrice(12345);
+        nissan.setYear(2009);
+        nissan.setColor("Green");
+        nissan.setParts(new String[] { "NewTire1, NewTire2, NewTire3, NewTire4" });
+        nissan.printFields();
 
-        //change values
-        Nissan.setMake("Fiat");
-        Nissan.setPrice(12345);
-        Nissan.setYear(2009);
-        Nissan.setColor("Green");
-
-        System.out.println("\nNissan.make: " + Nissan.getMake());
-        System.out.println("Nissan.price: " + Nissan.getPrice());
-        System.out.println("Nissan.year: " + Nissan.getYear());
-        System.out.println("Nissan.color: " + Nissan.getColor());
+        // create another car object which is a copy of nissa
+        Car nissan2 = new Car(nissan);
+        nissan2.printFields();
     }
 
 }

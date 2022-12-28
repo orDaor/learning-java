@@ -1,5 +1,5 @@
 public class Person {
-    
+
     private String name;
     private String nationality;
     private String dateOfBirth;
@@ -11,6 +11,13 @@ public class Person {
         this.nationality = nationality;
         this.dateOfBirth = dateOfBirth;
         this.seatNumber = seatNumber;
+    }
+
+    public Person(Person person) {
+        this.name = person.name;
+        this.nationality = person.nationality;
+        this.dateOfBirth = person.dateOfBirth;
+        this.seatNumber = person.seatNumber;
     }
 
     public String getName() {
@@ -45,5 +52,11 @@ public class Person {
         this.seatNumber = seatNumber;
     }
 
- 
+    public void printFields() {
+        System.out.println("\nName: " + this.name);
+        System.out.println("Nationality: " + this.nationality);
+        System.out.println("DateOfBirth: " + this.dateOfBirth);
+        System.out.println("SeatNumber: " + this.seatNumber);
+    }
+
 }
