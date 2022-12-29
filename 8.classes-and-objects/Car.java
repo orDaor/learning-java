@@ -7,6 +7,7 @@ public class Car {
     private int year;
     private String color;
     private String[] parts;
+    private int kms;
 
     // constructor
     public Car(
@@ -14,12 +15,14 @@ public class Car {
             double price,
             int year,
             String color,
-            String[] parts) {
+            String[] parts,
+            int kms) {
         this.make = make;
         this.price = price;
         this.year = year;
         this.color = color;
         this.parts = parts.clone();
+        this.kms = kms;
     }
 
     // copy constructor
@@ -29,6 +32,7 @@ public class Car {
         this.year = car.year;
         this.color = car.color;
         this.parts = car.parts.clone();
+        this.kms = car.kms;
     }
 
     // getter methods
@@ -52,6 +56,10 @@ public class Car {
         return this.parts.clone();
     }
 
+    public int getKms() {
+        return this.kms;
+    }
+
     // setters methods
     public void setMake(String make) {
         this.make = make;
@@ -73,11 +81,23 @@ public class Car {
         this.parts = parts.clone();
     }
 
-    public void printFields() {
-        System.out.println("\nMake: " + this.make);
-        System.out.println("Price: " + this.price);
-        System.out.println("Year: " + this.year);
-        System.out.println("Color: " + this.color);
-        System.out.println("Parts: " + Arrays.toString(this.parts));
+    public void setKms(int kms) {
+        this.kms = kms;
     }
+
+    public void drive(int newKms) {
+        this.kms += newKms;
+    }
+
+    public String toString() {
+        return "{" + "\n" +
+                "  Make: " + this.make + "\n" +
+                "  Price: " + this.price + "\n" +
+                "  Year: " + this.year + "\n" +
+                "  Color: " + this.color + "\n" +
+                "  Parts: " + Arrays.toString(this.parts) + "\n" +
+                "  Kms: " + this.kms + "\n" +
+                "}" + "\n";
+    }
+
 }
