@@ -1,27 +1,42 @@
 public class Store {
+    // properties
+    Movie[] moviesList;
 
-    private Movie[] movies;
-
+    // constructor
     public Store() {
-        // TODO
+        this.moviesList = new Movie[10];
     }
 
+    // get a movie from the store
     public Movie getMovie(int index) {
-        // TODO 
+        for (int i = 0; i < this.moviesList.length; i++) {
+            if (i == index) {
+                return new Movie(this.moviesList[i]);
+            }
+        }
+        // index not found
         return null;
     }
 
+    // store a movie in the store
     public void setMovie(int index, Movie movie) {
-        // TODO 
+        for (int i = 0; i < this.moviesList.length; i++) {
+            if (i == index) {
+                this.moviesList[i] = new Movie(movie);
+            }
+        }
     }
 
-
+    // to string
     public String toString() {
         String temp = "";
-        for (Movie movie : movies) {
-            temp += movie.toString() + "\n";
+        for (Movie m : this.moviesList) {
+            if (m != null) {
+                temp += m.toString();
+            } else {
+                temp += "null" + "\n";
+            }
         }
         return temp;
     }
-
 }

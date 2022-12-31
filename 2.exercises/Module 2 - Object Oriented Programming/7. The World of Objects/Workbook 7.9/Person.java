@@ -70,12 +70,13 @@ public class Person {
         return number == 1;
     }
 
+    //set random seat number in 0-11
     public void chooseSeat() {
         seatNumber = ((int) (Math.random() * 11 + 1));
     }
 
     public String toString() {
-        return "Name: " + name + "\n" + "Nationality: " + 
+        return "\n" + "Name: " + name + "\n" + "Nationality: " + 
             nationality + "\n" + "Date of Birth: " + 
             dateOfBirth + "\n" + "Seat Number: " +
             seatNumber + "\n" + "Passport: " + 

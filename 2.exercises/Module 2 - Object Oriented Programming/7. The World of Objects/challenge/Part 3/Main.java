@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -29,9 +30,30 @@ public class Main {
 
     public static void userInput() {
         Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.ENGLISH);
         String status = "continue";
         while (status.equals("continue")) {
-            System.out.print("To edit another rating, type: 'continue': ");
+            System.out.print("\nPlease choose an integer between 0 - 9: ");
+            int userIntegerInput = scanner.nextInt();
+            //index out of range, choose another one
+            if (userIntegerInput < 0 || userIntegerInput > 9) {
+                continue;
+            }
+            //index ok, get movie with this index
+            Movie selectedMovie = store.moviesList[userIntegerInput];
+            
+            //ask user to set the rating for this movei
+            System.out.print("Set a new rating for " + selectedMovie.getName() + ": ");
+            double userRatingInput = scanner.nextDouble();
+
+            //update rating of the selected movie
+            selectedMovie.setRating(userRatingInput);
+
+            //print the updated movie list in the store
+            printStore();
+
+            //Want to change another rating
+            System.out.print("To change another rating type 'continue' + enter:");
             status = scanner.next();
         }
         scanner.close();
