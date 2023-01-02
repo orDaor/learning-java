@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +19,10 @@ public class Main {
             new Movie("The Lord of the Rings: The Fellowship of the Ring", "DVD", 8.8)
         };
 
-        // TODO: Populate Store using a foreach loop. 
+        //Populate Store using a foreach loop. 
+        for (Movie m : movies) {
+            store.addMovie(m);
+        }
 
         printStore();
         userInput();
@@ -27,6 +31,7 @@ public class Main {
 
     public static void userInput() {
         Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.ENGLISH);
 
         String status = "continue";
         while (status.equals("continue")) {
